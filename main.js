@@ -92,9 +92,8 @@ const catalogo = [{
   ];
  
 for (produtoCatalogo of catalogo){
-    
-  //os estilos na class da div estão disponíveis no site do tailwind. Borda, largura width (w-48) e margem (my-2). Essa margem considera os dois eixos.  
-    const cartaoProduto = `<div class='border-solid border-2 border-sky-500 w-48 my-2' id="card-produto-${produtoCatalogo.id}"> 
+    //retirando o y da margem, para retirarmos a margem vertical de cada card
+    const cartaoProduto = `<div class='border-solid border-2 border-sky-500 w-48 m-2' id="card-produto-${produtoCatalogo.id}"> 
     <img 
     src="./assets/img/${produtoCatalogo.nomeArquivoImagem}" 
     style="height: 300px"/>
