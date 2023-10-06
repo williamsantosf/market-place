@@ -102,7 +102,8 @@ for (produtoCatalogo of catalogo){
     //para cada produto em catálogo os comandos abaixo serão executados, incluindo a função getElementByID
     //acessamos a variavel auxiliar e seu atributo, obtemos seu innerHTML e o acrescentamos à variável cartaoProduto,
     //em seguida, tudo acontece novamente, até o fim da lista (catalogo)
-    const cartaoProduto = `<div id="card-produto-1">
+    //adicionado produtoCatalogo.id no atributo id da div para que possa gerar dinamicamente um id unico para cada card de produto.
+    const cartaoProduto = `<div id="card-produto-${produtoCatalogo.id}"> 
     <img 
     src="./assets/img/${produtoCatalogo.nomeArquivoImagem}" 
     style="height: 300px"/>
