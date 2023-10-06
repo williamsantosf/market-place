@@ -83,7 +83,7 @@ const catalogo = [{
     nome: "Pré-Treino 150g",
     marca: "Max Titanium",
     preco: 90.00,
-    nomeArquivoImagem: "produto12.jpg",
+    nomeArquivoImagem: "produto12.png",
   },
   {
     id: 13,
@@ -107,7 +107,7 @@ for (produtoCatalogo of catalogo){
     src="./assets/img/${produtoCatalogo.nomeArquivoImagem}" 
     style="height: 300px"/>
     <p>${produtoCatalogo.nome}</p> 
-    <p>${produtoCatalogo.marca}</p>
+    <p class='marca'>${produtoCatalogo.marca}</p>
     <p>$ ${produtoCatalogo.preco}</p>
     <button>Add Cart</button>
     </div>`;
@@ -115,7 +115,7 @@ for (produtoCatalogo of catalogo){
     document.getElementById("container-produto").innerHTML += cartaoProduto;
     //essa função recupera um elemeto à partir do ID, no caso a section container-produto
     //o atributo .innerHTML vai resgatar o HTML embutido no elemento
-    // += acrescenta o conteúdo da constante cartaoProduto
+    // += acrescenta o conteúdo da constante cartaoProduto no HTML do container-produto, qua até então não existia.
 
 };
 
