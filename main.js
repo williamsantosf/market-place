@@ -94,20 +94,30 @@ const catalogo = [{
   },
   ];
  
-//Abaixo é mostrado como a constante  cartaoProduto, com um HTML embutido, busca os elementos da lista,
-//acessando os atributos de cada objeto de acordo com sua posição no array.
-//Essa maneira ainda não é interessante, pois o processo de recuperação dos itens da lista está manual.
-const cartaoProduto = `<div id="card-produto-1">
-<img 
-src="./assets/img/${catalogo[3].nomeArquivoImagem}" 
-style="height: 300px"/>
-<p>${catalogo[3].nome}</p> 
-<p>${catalogo[3].marca}</p>
-<p>$ ${catalogo[3].preco}</p>
-<button>Add Cart</button>
-</div>`;
 
-//essa função recupera um elemto à partir do ID, no caso a section container-produto
-//o atributo .innerHTML vai resgatar o HTML embutido no elemento
-// += acrescenta o conteúdo da constante cartaoProduto
-document.getElementById("container-produto").innerHTML += cartaoProduto;
+//Faremos agora um loop, para percorrer todos os elemetos da lista catalogo, e traga os atributos de cada objeto dinamicamente
+
+for (produtoCatalogo of catalogo){
+    //produtoCatalgo é uma variável auxiliar criada no momento que estabelecemos o loop
+    //para cada produto em catálogo os comandos abaixo serão executados, incluindo a função getElementByID
+    //acessamos a variavel auxiliar e seu atributo, obtemos seu innerHTML e o acrescentamos à variável cartaoProduto,
+    //em seguida, tudo acontece novamente, até o fim da lista (catalogo)
+    const cartaoProduto = `<div id="card-produto-1">
+    <img 
+    src="./assets/img/${produtoCatalogo.nomeArquivoImagem}" 
+    style="height: 300px"/>
+    <p>${produtoCatalogo.nome}</p> 
+    <p>${produtoCatalogo.marca}</p>
+    <p>$ ${produtoCatalogo.preco}</p>
+    <button>Add Cart</button>
+    </div>`;
+
+    document.getElementById("container-produto").innerHTML += cartaoProduto;
+    //essa função recupera um elemeto à partir do ID, no caso a section container-produto
+    //o atributo .innerHTML vai resgatar o HTML embutido no elemento
+    // += acrescenta o conteúdo da constante cartaoProduto
+
+};
+
+
+
