@@ -1,0 +1,20 @@
+/* SELETORES EM CSS
+Podemos usar os seletores para estilizar diretamente os elementos no HTML, são eles:
+-> SELETOR DE TAG*/
+p {
+    color: red; /*esse sleetor aponta para todas as tags do tipo <p>*/
+}/*
+
+-> SELETOR DE ID */
+
+#container-produto {
+    background-color: #545454; /*esse seletor aponta para todos os elementos da classe container-produto*/
+}/*
+
+SETETOR DE CLASSE*/
+
+.marca {
+    color: blue; /*esse seletor aponta para todos os elementos da casse marca*/    
+}
+
+
