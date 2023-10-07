@@ -12,14 +12,7 @@
 </head>
 
 <body>
-  <!--
-    Na section de id "carrinho", observe o atributo right[-360px] da classe. Ele faz a barra do carrinho desaparecer, pois se o elemento possui 360px 
-    (width: 360px || w-[360]), logo seu atributo right igual a  [-360px], faz com que ele inicie 360 pixels negativo em relação a borda 
-    direita da página, ou seja, ele está fora da página 360px à diretita. Analogamente, se o atributo right estiver zerado
-    (right-[0px]), o elemento inica 0px da borda direita e se extende 360 pixels para a direita.
-    Vide arquivo menuCarrinho.js
-  -->
-  <section id="carrinho" class="bg-black fixed top-0 right-[0px] h-screen w-[360px] text-slate-200">
+    <section id="carrinho" class="bg-black fixed top-0 right-[0px] h-screen w-[360px] text-slate-200">
     <div id="cabeçalho carrinho" class="flex justify-between m-4">
       <p>Meu Carrinho</p>
       <button id="fechar-carrinho"><i class="fa-regular fa-circle-xmark"></i></button>
