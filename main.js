@@ -92,7 +92,8 @@ const catalogo = [{
     nomeArquivoImagem: "produto13.jpg",
   },
   ];
- 
+
+var produtoCatalogo  
 for (produtoCatalogo of catalogo){
 
     const cartaoProduto = `<div class='border-solid border-2 border-sky-500 w-48 m-2' id="card-produto-${produtoCatalogo.id}"> 
@@ -110,6 +111,7 @@ for (produtoCatalogo of catalogo){
 };
 
 inicializarCarrinho();
+
 
 
 
