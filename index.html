@@ -5,15 +5,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="style.css"> <!--link de referência para os arquivos JS e CSS-->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-  <header></header>
+    <section id="carrinho" class="bg-black fixed top-0 right-[0px] h-screen w-[360px] text-slate-200">
+    <div id="cabeçalho carrinho" class="flex justify-between m-4">
+      <p>Meu Carrinho</p>
+      <button id="fechar-carrinho"><i class="fa-regular fa-circle-xmark"></i></button>
+    </div>
+    <section id="produtos-carrinho" class="text-white">
+      <p>Camisa</p>
+      <p>bermuda</p>
+      <p>calcinha</p>
+    </section>
+    <p id="preço-total">$200.00</p>
+    <button class="bg-white text-slate-900 p-1">Finalizar Compra</button>
+  </section>
+
+  <header class="flex bg-black justify-between">
+    <img class="h-28 w-40 p-0" src="./assets/logo-preto.png" alt="Logo da Loja">
+    <div class="flex text-slate-200 gap-2 items-end mx-6">
+      <button><i class="fa-solid fa-clock"></i></button>
+      <button><i class="fa-solid fa-cart-shopping" id="abrir-carrinho"></i></button>
+    </div>
+  </header>
   <main>
-    <section id="container-produto"></section><!--essa section é responsável por trazer o card dos produtos-->
+    <section id="container-produto" class="flex flex-wrap"></section>
   </main>
-  <script src="./main.js"></script>
+  <script type="module" src="./main.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,4 @@
-//Criamos uma constante catalogo que contém uma lista de objetos, que são os produtos. A lista deve iniciar com um 
-//colchete (array list) e as chaves delimitam cada objeto. 
+import { inicializarCarrinho } from "./src/menuCarrinho";
 
 const catalogo = [{
     id: 1,  
@@ -94,19 +93,12 @@ const catalogo = [{
   },
   ];
  
-
-//Faremos agora um loop, para percorrer todos os elemetos da lista catalogo, e traga os atributos de cada objeto dinamicamente
-
 for (produtoCatalogo of catalogo){
-    //produtoCatalgo é uma variável auxiliar criada no momento que estabelecemos o loop
-    //para cada produto em catálogo os comandos abaixo serão executados, incluindo a função getElementByID
-    //acessamos a variavel auxiliar e seu atributo, obtemos seu innerHTML e o acrescentamos à variável cartaoProduto,
-    //em seguida, tudo acontece novamente, até o fim da lista (catalogo)
-    //adicionado produtoCatalogo.id no atributo id da div para que possa gerar dinamicamente um id unico para cada card de produto.
-    const cartaoProduto = `<div id="card-produto-${produtoCatalogo.id}"> 
+
+    const cartaoProduto = `<div class='border-solid border-2 border-sky-500 w-48 m-2' id="card-produto-${produtoCatalogo.id}"> 
     <img 
     src="./assets/img/${produtoCatalogo.nomeArquivoImagem}" 
-    style="height: 300px"/>
+    style="height: 200px"/>
     <p>${produtoCatalogo.nome}</p> 
     <p class='marca'>${produtoCatalogo.marca}</p>
     <p>$ ${produtoCatalogo.preco}</p>
@@ -114,11 +106,10 @@ for (produtoCatalogo of catalogo){
     </div>`;
 
     document.getElementById("container-produto").innerHTML += cartaoProduto;
-    //essa função recupera um elemeto à partir do ID, no caso a section container-produto
-    //o atributo .innerHTML vai resgatar o HTML embutido no elemento
-    // += acrescenta o conteúdo da constante cartaoProduto no HTML do container-produto, qua até então não existia.
-
+    
 };
+
+inicializarCarrinho();
 
 
 
