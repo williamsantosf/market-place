@@ -94,7 +94,6 @@ const catalogo = [{
   ];
 
 for (const produtoCatalogo of catalogo){
-//Adicionado a proriedade bg-white nos cards de produto, para que os cards tenham fundo branco
     const cartaoProduto = `<div class='border-solid border-2 border-sky-500 w-48 m-2 bg-white' id="card-produto-${produtoCatalogo.id}"> 
     <img 
     src="./assets/img/${produtoCatalogo.nomeArquivoImagem}" 
