@@ -18,7 +18,7 @@ const catalogo = [{
     id: 3,
     nome: "Cueca Boxer",
     marca: "Lupo",
-    preco: 49.90,
+    preco: 49,
     nomeArquivoImagem: "produto3.jpg",
   },
   {
@@ -100,7 +100,7 @@ for (const produtoCatalogo of catalogo){
     style="height: 200px"/>
     <p>${produtoCatalogo.nome}</p> 
     <p class='marca'>${produtoCatalogo.marca}</p>
-    <p>$ ${produtoCatalogo.preco}</p>
+    <p>R$ ${produtoCatalogo.preco}</p>
     <button>Add Cart</button>
     </div>`;
 
