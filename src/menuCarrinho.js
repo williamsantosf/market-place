@@ -18,7 +18,7 @@ export function inicializarCarrinho() {
     botaoAbrirCarrinho.addEventListener("click", abrirCarrinho);
     
 }
-//explicação da função abaixo
+
 export function adicionarAoCarrinho (idProduto) {
     const produto = catalogo.find(p => p.id === idProduto);
     const containerProdutosCarrinho = document.getElementById('produtos-carrinho')
@@ -35,15 +35,3 @@ export function adicionarAoCarrinho (idProduto) {
   
   containerProdutosCarrinho.innerHTML += cartaoProdutoCarrinho;
 };
-//Criamos a função adicionarAoCarrinho:
-//1. criamos a variavel cartaoProdutoCarrinho e nela colocamos o HTML vindo do index.hmtl
-//2. criamos a variavel containerProdutoCarrinho, recuperamos o elemento do HTML que ela deverá manipular no caso toda a área (seção)
-//na qual ficarão os produtos no carrinho.
-//3. No fim da função o retorno, containerProdutoCarrinho recupera seu HTML interior e adiciona isso à um cartaoProdutoCarrinho
-//4. exportamos a função para ser acessada por outros arquivos.
-//22.importamos o catalogo.
-//  na função adiconarAoCarrinho, incluimos o parâmtro idProduto, ou seja, para adicionar produto ao carrinho, deve-se informar seu id (contido no botão)
-//  na linha 23, criamos a variavel produto (essa variavel tem escolo local e refer-se ao produto que será adicionado ao carrinho, a varivavel que representa o produto renderizado no catalogo é a produtoCatalogo)
-//  na variavel produto está contida a função catalogo.find(p => p.id === idProduto), que lê-se: 
-// "no catalogo, encontre um produto p TAL QUE (=>) seu id seja igual (===) ao id fornecido como parâmetro"
-//23. em imagem, nome e preço ${} para que recupere randomicamente 

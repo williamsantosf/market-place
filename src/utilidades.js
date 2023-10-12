@@ -91,5 +91,3 @@ export const catalogo = [
       nomeArquivoImagem: "produto13.jpg",
     },
     ];
-
-//10. exportamos a constante para ser usada de qualquer ponto do projeto.
