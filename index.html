@@ -12,30 +12,23 @@
 </head>
 
 <body class="bg-white flex flex-col">
-  <!--Adicionada a transição com a prop duration, uma borda do carrinho aberto com border-l, paddin entre os elementos e flex col para ajustar os produtos dentro do carrinho-->
   <section id="carrinho" 
     class="bg-black fixed top-0 right-[-360px] h-screen w-[360px] text-slate-200 z-50 duration-200 border-l p-5 flex flex-col justify-between">
     <div id="cabeçalho carrinho" class="flex justify-between m-4">
-      <p>Meu Carrinho</p><!--Copiamos o icone de fechar o carrinho para ser usado para remover o produto-->
+      <p>Meu Carrinho</p>
       <button id="fechar-carrinho"><i class="fa-solid fa-circle-xmark text-2xl"></i></button>
     </div>
     <section id="produtos-carrinho" class="text-white">
-      <!--Dentro do carrinho, a tag article representa cada produto adicionado no carrinho com as seguintes props:
-      flex (ajusta mobilidade dos elementos contidos nele), bg-slate (cor), rounded-lg (deixar as bordas arredondadas), paddin e relative.
-      Relative vai dizer que os elementos contidos nele podem assumir posições relativas à ele. Sendo que elementos filhos terão posição absoluta -->
-      <article class="flex bg-slate-100 rounded-lg p-1 relative">
-        <!--O botão terá a posição absoluta em relação ao seu elemento pai. Hover indica a aparência do ícone quando tocado pelu cursor-->
-        <button id="fechar-carrinho" class="absolute top-0 right-2"><i 
-            class="fa-solid fa-circle-xmark text-slate-500 hover:text-slate-800"></i></button>
-        <img src="./assets/img/produto1.jpg" alt="Descrição produto" class="h-24 rounded-lg">
-        <div class="py-2">
-          <p class="text-slate-900 text-sm">Nome Do Produto</p>
-          <p class="text-slate-400 text-xs">Tamanho: M</p>
-          <p class="text-green-700 text-lg">R$ 70</p>
-        </div>
-
-      </article>
-
+        <article class="flex bg-slate-100 rounded-lg p-1 relative">
+          <button id="fechar-carrinho" class="absolute top-0 right-2"><i 
+              class="fa-solid fa-circle-xmark text-slate-500 hover:text-slate-800"></i></button>
+            <img src="./assets/img/produto1.jpg" alt="Descrição produto" class="h-24 rounded-lg">
+            <div class="py-2">
+              <p class="text-slate-900 text-sm">Nome Do Produto</p>
+              <p class="text-slate-400 text-xs">Tamanho: M</p>
+              <p class="text-green-700 text-lg">R$ 70</p>
+            </div>
+        </article>
     </section>
     <p id="preço-total">$200.00</p>
     <button class="bg-white text-slate-900 p-1">Finalizar Compra</button>
@@ -54,5 +47,3 @@
 </body>
 
 </html>
-<!--OBS.: A Tag <article> é usada para designar elementos independentes. Ou seja, que não necessitam do resto do site para funcionar.
-  Ou ainda para designar ele mentos que só fazem sentido juntose que sejam auto-explicativos -->
