@@ -18,22 +18,12 @@
       <p>Meu Carrinho</p>
       <button id="fechar-carrinho"><i class="fa-solid fa-circle-xmark text-2xl"></i></button>
     </div>
-    <section id="produtos-carrinho" class="text-white">
-        <article class="flex bg-slate-100 rounded-lg p-1 relative">
-          <button id="fechar-carrinho" class="absolute top-0 right-2"><i 
-              class="fa-solid fa-circle-xmark text-slate-500 hover:text-slate-800"></i></button>
-            <img src="./assets/img/produto1.jpg" alt="Descrição produto" class="h-24 rounded-lg">
-            <div class="py-2">
-              <p class="text-slate-900 text-sm">Nome Do Produto</p>
-              <p class="text-slate-400 text-xs">Tamanho: M</p>
-              <p class="text-green-700 text-lg">R$ 70</p>
-            </div>
-        </article>
-    </section>
-    <p id="preço-total">$200.00</p>
-    <button class="bg-white text-slate-900 p-1">Finalizar Compra</button>
+      <section id="produtos-carrinho"></section>
+      <!--Retiramos o HTML que representa o produto no carrinho e movemos para dentro do arquivo menuCarrinho.js-->             
+      <p id="preço-total">$200.00</p>
+      <button class="bg-white text-slate-900 p-1">Finalizar Compra</button>
   </section>
-  <header class="flex bg-black h-22 shadow-xl shadow-zinc-800 px-3 py-2 justify-between sticky top-0 text-xl">
+  <header class="flex bg-black h-22 shadow-xl shadow-zinc-800 px-3 py-2 justify-between sticky top-0 text-xl z-10">
     <img class="h-20 w-40 p-0" src="./assets/logo-preto.png" alt="Logo da Loja">
     <div class="flex text-slate-200 gap-2 items-end mx-6">
       <button id="" class="mx-2"><i class="fa-solid fa-clock"></i></button>
@@ -45,5 +35,8 @@
   </main>
   <script type="module" src="./main.js"></script>
 </body>
-
 </html>
+<!--20.adicionado a prop z-10 para que as imagens não se sobreponha ao header
+a propriedade z reperesenda o eixo z em relação à x e y. Quanto maior o z de um elemento, mais acima dos demias elementos
+ele ficará na página.
+-->
