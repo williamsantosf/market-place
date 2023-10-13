@@ -1,4 +1,3 @@
-//8. tranformamos todos os ids em strings para evitar problemas durante execução do código, para que o JS não faça conversões
 export const catalogo = [
     {
       id: '1',  
