@@ -46,15 +46,11 @@ export function adicionarAoCarrinho(idProduto) {
   const containerProdutosCarrinho =
     document.getElementById("produtos-carrinho");
   
-//2. criamos a constante que vai recriar o elemento do HTML, nesse caso o article, uma vez que o card do produto está todo dentro da tag <article></article>.
   const elementoArticle = document.createElement("article"); 
   
-//3. Criamos uma variável que recebe um array com todos as classes que queremos criar simultaneamente no article  
   const articleClasses = ["flex", "bg-slate-100","rounded-lg", "p-1", "relative"];
-//elementoArticle.classList.add();  caso fóssemos incluir cada prop da classe separadamente, o que não é viável.
   
-//4. Agora, criamos um loop for para percorrer a lista criada acima, que em seguida acessa a lista de classes do elementoArticle e adiciona uma a uma dinamicamente  
-  for (const articleClass of articleClasses){ //Lê-se: para cada articleClass de articleClasses, acesse a lista de classes do elementoArticle, e adicione a articleClass
+  for (const articleClass of articleClasses){ 
     elementoArticle.classList.add(articleClass);
   }
     const cartaoProdutoCarrinho = `
@@ -78,10 +74,7 @@ export function adicionarAoCarrinho(idProduto) {
       </div>`;
 
   elementoArticle.innerHTML= cartaoProdutoCarrinho;
-  //5. Após criar o elementoArticle e montar o cartaoProdutoCarrinho, acessamos o innerHTML do elementoArticle e incluímos o cartaoProdutoCarrinho      
-
   containerProdutosCarrinho.appendChild(elementoArticle);
-  //6. Acessamos o containerProdutosCarrinho, e através da prop .appendChild adicionamos o elementoArticle, já totalmente montado
 
   document
     .getElementById(`decrementar-produto-${idProduto}`)
@@ -91,7 +84,3 @@ export function adicionarAoCarrinho(idProduto) {
     .getElementById(`incrementar-produto-${idProduto}`)
     .addEventListener("click", () => incrementarQuantidadeProduto(produto.id));
 }
-
-//1. Não é possível alterar a quantidade dos produtos adicionados anteriormente no carrinho, pois o navegador, a cada vez que incluimos um produto diferente,
-//refaz todo o HTML anterior para adicionar o novo elemento. Sendo assim, os cartões anteriores se tornam simples HTML, sem JavaScript, pois as funcionalidades
-//estão somente no último produto inserido. Vamos resolver isso nos próximos passos.
