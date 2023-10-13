@@ -11,32 +11,27 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
-    <section id="carrinho" class="bg-black fixed top-0 right-[0px] h-screen w-[360px] text-slate-200">
+<body class="bg-white flex flex-col">
+  <section id="carrinho" 
+    class="bg-black fixed top-0 right-[-360px] h-screen w-[360px] text-slate-200 z-50 duration-200 border-l p-5 flex flex-col justify-between">
     <div id="cabeçalho carrinho" class="flex justify-between m-4">
       <p>Meu Carrinho</p>
-      <button id="fechar-carrinho"><i class="fa-regular fa-circle-xmark"></i></button>
+      <button id="fechar-carrinho"><i class="fa-solid fa-circle-xmark text-2xl"></i></button>
     </div>
-    <section id="produtos-carrinho" class="text-white">
-      <p>Camisa</p>
-      <p>bermuda</p>
-      <p>calcinha</p>
-    </section>
-    <p id="preço-total">$200.00</p>
-    <button class="bg-white text-slate-900 p-1">Finalizar Compra</button>
+      <section id="produtos-carrinho" class="h-3/5 overflow-y-auto flex flex-col gap-2"></section>
+      <p id="preço-total">$200.00</p>
+      <button class="bg-white text-slate-900 p-1">Finalizar Compra</button>
   </section>
-
-  <header class="flex bg-black justify-between">
-    <img class="h-28 w-40 p-0" src="./assets/logo-preto.png" alt="Logo da Loja">
+  <header class="flex bg-black h-22 shadow-xl shadow-zinc-800 px-3 py-2 justify-between sticky top-0 text-xl z-10">
+    <img class="h-20 w-40 p-0" src="./assets/logo-preto.png" alt="Logo da Loja">
     <div class="flex text-slate-200 gap-2 items-end mx-6">
-      <button><i class="fa-solid fa-clock"></i></button>
-      <button><i class="fa-solid fa-cart-shopping" id="abrir-carrinho"></i></button>
+      <button id="" class="mx-2"><i class="fa-solid fa-clock"></i></button>
+      <button id="abrir-carrinho" class="mr-2"><i class="fa-solid fa-cart-shopping"></i></button>
     </div>
   </header>
   <main>
-    <section id="container-produto" class="flex flex-wrap"></section>
+    <section id="container-produto" class="flex flex-wrap p-10 justify-center gap-6"></section>
   </main>
   <script type="module" src="./main.js"></script>
 </body>
-
 </html>
