@@ -21,12 +21,14 @@ export function inicializarCarrinho() {
 }
 
 function removerDoCarrinho (idProduto){                  
-    delete idsProdutoCarrinhoComQuantidade[idProduto];    
-    renderizarProdutosCarrinho();                       
+    delete idsProdutoCarrinhoComQuantidade[idProduto]; 
+    atualizarPrecoCarrinho(); //2. colocamos a função atualizarPrecoCarrinho em todos os lugares onde ela precisa ser chamada,
+    renderizarProdutosCarrinho(); //  ou seja, toda vez que algum evento altera a quantidade no carrinho.                        
 }
 
 function incrementarQuantidadeProduto(idProduto) {
   idsProdutoCarrinhoComQuantidade[idProduto]++;
+  atualizarPrecoCarrinho(); //2.1 quantidade do carrinho é alterada
   atualizarInformacaoQuantidade(idProduto); 
 }
 
@@ -36,6 +38,7 @@ function decrementarQuantidadeProduto(idProduto) {
         return;                                      
     }
   idsProdutoCarrinhoComQuantidade[idProduto]--;
+  atualizarPrecoCarrinho(); //2.2 quantidade do carrinho é alterada
   atualizarInformacaoQuantidade(idProduto); 
 }
 
@@ -110,5 +113,18 @@ export function adicionarAoCarrinho(idProduto) {
     return; 
   }
   idsProdutoCarrinhoComQuantidade[idProduto] = 1;
-  desenharProdutoNoCarrinho(idProduto); 
+  desenharProdutoNoCarrinho(idProduto);
+  atualizarPrecoCarrinho(); 
+}
+
+//1.Criação da função que vai atualizar o preço no carrinho
+function atualizarPrecoCarrinho () {                                  //1.1 A função não necessita de nenhum parâmetro                                     
+  const precoCarrinho = document.getElementById("preco-total");       //1.2 criamos a variavel precoCarrinho que acessa o elemento html que queremos manipular     
+  let precoTotalCarrinho = 0;                                         //1.3 criamos a variavel precoTotalCarrinho com valor inicial zerado (let pois essa variável precisa permitir ser atualizada)             
+  for (const idProdutoNoCarrinho in idsProdutoCarrinhoComQuantidade){ //1.4 criamos um laço for para percorrer o dicionário (idProdutoNoCarrinho para ilustrar que estamos buscando pelos produtos no carrinho)              
+    precoTotalCarrinho +=                                             //1.5 lê-se: para cada idProdutoNoCarrinho no dicionário         
+      catalogo.find((p) => p.id === idProdutoNoCarrinho).preco *      // acesse o catálogo encontre um produto p tal que seu id seja igual ao id do produto no carrinho, acesse o atributo preco                   
+      idsProdutoCarrinhoComQuantidade[idProdutoNoCarrinho];           // multiplique pelo idProdutoNoCarrinho do dicionário (lembre-se que o idProdutoNoCarrinho é uma chave, que guarda a quantidade do produto no carrinho)                   
+  }                                                                   //acrescente isso á variável precoTotalCarrinho.
+  precoCarrinho.innerText = `Total: $${precoTotalCarrinho}`;        //1.6 acesse o texto interno e coloque o precoTotalCarrinho       
 }
