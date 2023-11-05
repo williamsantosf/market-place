@@ -69,25 +69,8 @@ export const catalogo = [
       preco: 259.00,
       nomeArquivoImagem: "produto10.jpg",
     },
-    {
-      id: '11',
-      nome: "Creatina 300g",
-      marca: "Integral Médica",
-      preco: 130.00,
-      nomeArquivoImagem: "produto11.jpg",
-    },
-    {
-      id: '12',
-      nome: "Pré-Treino 150g",
-      marca: "Max Titanium",
-      preco: 90.00,
-      nomeArquivoImagem: "produto12.png",
-    },
-    {
-      id: '13',
-      nome: "Whey Protein 900g",
-      marca: "Max Titanium",
-      preco: 138.90,
-      nomeArquivoImagem: "produto13.jpg",
-    },
     ];
+
+function salvarLocalStorage (chave, informacao) {
+    localStorage.setItem(chave, informacao);
+}    
