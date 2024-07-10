@@ -30,7 +30,7 @@ export const catalogo = [
     {
       id: '5',
       nome: "Short Corrida",
-      marca: "Nike'",
+      marca: "Nike",
       preco: 110.00,
       nomeArquivoImagem: "produto5.webp",
     },
