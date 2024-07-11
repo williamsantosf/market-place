@@ -71,6 +71,11 @@ export const catalogo = [
     },
     ];
 
-function salvarLocalStorage (chave, informacao) {
-    localStorage.setItem(chave, informacao);
-}    
+export function salvarLocalStorage (chave, informacao) { //1.Criando a função que cria o storage no navegador
+  localStorage.setItem(chave, JSON.stringify(informacao)); //3. Usamos a lib que vai converter o objeto em uma string, pois no Local Sorage, está sendo salvo como objeto, e não como texto.
+}                                                          //A função necessita de dois parâmetros: a chave (aqui chammaos de carrrinho no arquivo menuCarrinho), e informação que será salva (nesse caso um objeto contendo todas as informações do produto)  
+
+export function lerLocalStorage (chave) {
+  return JSON.parse(localStorage.getItem(chave)); //4. para recuperar a informação do local storage, a função necessita somente da chave armazenada.
+}                                          //utilizamos o método parse, que fará o contrário, pegará a string e transformará em um objeto.
+                                           //utilizamos o return para que função entregue ao navegador os dados guardados
